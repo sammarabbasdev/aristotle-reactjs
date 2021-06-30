@@ -23,6 +23,7 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import Login from '../../../components/Login';
 
 const key = 'login';
 
@@ -30,7 +31,6 @@ export function LoginPage({
                             username,
                             loading,
                             error,
-                            repos,
                             onSubmitForm,
                           }) {
   useInjectReducer({ key, reducer });
@@ -41,20 +41,12 @@ export function LoginPage({
     if (username && username.trim().length > 0) onSubmitForm();
   }, []);
 
-  const reposListProps = {
-    loading,
-    error,
-    repos,
-  };
-
   return (
     <article>
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div>
-        <h1>Welcome to Login Page</h1>
-      </div>
+      <Login onSubmit={onSubmitForm} />
     </article>
   );
 }

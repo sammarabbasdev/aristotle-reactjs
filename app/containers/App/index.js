@@ -15,7 +15,7 @@ import Master from "../Master"
 
 import GlobalStyle from '../../global-styles';
 import routes, { loginRoute } from '../routes';
-import MasterNonMember from '../NonMember/MasterNonMember';
+import MasterNonMember from '../MasterNonMember';
 
 function RouteWithSubRoutes(route) {
   return (
