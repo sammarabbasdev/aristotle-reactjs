@@ -53,7 +53,7 @@ However, you can integrate the following by using the guides below:
 
 ## styled-components
 
-Below creates two styled react components (`<Title>`, `<Wrapper>`) and renders them
+Below creates two styled react components (`<Title>`, `<MasterNonMember>`) and renders them
 as children of the `<Header>` component:
 
 ```jsx
@@ -68,9 +68,9 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
-// Create a <Wrapper> react component that renders a <section> with
+// Create a <MasterNonMember> react component that renders a <section> with
 // some padding and a papayawhip background
-const Wrapper = styled.section`
+const MasterNonMember = styled.section`
   padding: 4em;
   background: papayawhip;
 `;
@@ -78,12 +78,12 @@ const Wrapper = styled.section`
 // Use them like any other React component – except they're styled!
 function Button() {
   return (
-    <Wrapper>
+    <MasterNonMember>
       <Title>
         Hello {this.props.name}, this is your first styled component!
       </Title>
       ...
-    </Wrapper>
+    </MasterNonMember>
   );
 }
 ```

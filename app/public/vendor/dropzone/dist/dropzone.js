@@ -1923,7 +1923,7 @@ function (_Emitter) {
 
         _this7._updateMaxFilesReachedClass();
       });
-    } // Wrapper for enqueueFile
+    } // MasterNonMember for enqueueFile
 
   }, {
     key: "enqueueFiles",
@@ -2110,7 +2110,7 @@ function (_Emitter) {
 
       fileReader.readAsDataURL(file);
     } // `mockFile` needs to have these attributes:
-    // 
+    //
     //     { name: 'name', size: 12345, imageUrl: '' }
     //
     // `callback` will be invoked when the image has been downloaded and displayed.
@@ -2274,7 +2274,7 @@ function (_Emitter) {
           i++;
         }
       }
-    } // Wrapper for `processFiles`
+    } // MasterNonMember for `processFiles`
 
   }, {
     key: "processFile",

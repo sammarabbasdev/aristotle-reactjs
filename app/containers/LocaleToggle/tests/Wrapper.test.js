@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 
 import Wrapper from '../Wrapper';
 
-describe('<Wrapper />', () => {
+describe('<MasterNonMember />', () => {
   it('should render an <div> tag', () => {
     const { container } = render(<Wrapper />);
     expect(container.firstChild.tagName).toEqual('DIV');

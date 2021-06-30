@@ -2,7 +2,7 @@
 
 exports[`<Footer /> should render and match the snapshot 1`] = `
 <footer
-  className="Wrapper-wcfdfo-0 dPvBog"
+  className="MasterNonMember-wcfdfo-0 dPvBog"
 >
   <section>
     <span>
@@ -11,7 +11,7 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
   </section>
   <section>
     <div
-      className="Wrapper-xnjoq9-0 dNmQIR"
+      className="MasterNonMember-xnjoq9-0 dNmQIR"
     >
       <select
         className="Select-sc-1sm01tk-0 wIjFa"
@@ -33,8 +33,8 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
   </section>
   <section>
     <span>
-      
-      Made with love by 
+
+      Made with love by
       <a
         className="A-br8h0y-0 dwVNvo"
         href="https://twitter.com/mxstbr"
@@ -42,7 +42,7 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
         Max Stoiber
       </a>
       .
-    
+
     </span>
   </section>
 </footer>

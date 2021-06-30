@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import Wrapper from '../Wrapper';
+import Wrapper from '../MasterNonMember';
 
-describe('<Wrapper />', () => {
+describe('<MasterNonMember />', () => {
   it('should render an <footer> tag', () => {
     const { container } = render(<Wrapper />);
     expect(container.querySelector('footer')).not.toBeNull();

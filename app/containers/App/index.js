@@ -11,12 +11,11 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Master from "../Master"
 
 import GlobalStyle from '../../global-styles';
 import routes, { loginRoute } from '../routes';
-import { HeaderNonMember, FooterNonMember } from '../NonMember/headerFooter';
+import MasterNonMember from '../NonMember/MasterNonMember';
 
 function RouteWithSubRoutes(route) {
   return (
@@ -52,27 +51,27 @@ export default function App() {
 
         {/*No Logged in Member routing*/}
         <Route path={'/login'}>
-          <HeaderNonMember />
-          {
-            loginRoute.map(
-              (route, i) => (
-                <RouteWithSubRoutes key={i} {...route} />
-              ),
-            )
-          }
-          <FooterNonMember />
+          <MasterNonMember>
+            {
+              loginRoute.map(
+                (route, i) => (
+                  <RouteWithSubRoutes key={i} {...route} />
+                ),
+              )
+            }
+          </MasterNonMember>
         </Route>
 
         {/*Logged in Member routing*/}
         <Route path={'/dashboard'}>
           <>
-            <Header />
-            {
-              routes.map((route, i) => (
-                <RouteWithSubRoutes key={i} {...route} />
-              ))
-            }
-            <Footer />
+            <Master>
+              {
+                routes.map((route, i) => (
+                  <RouteWithSubRoutes key={i} {...route} />
+                ))
+              }
+            </Master>
           </>
         </Route>
       </Switch>
