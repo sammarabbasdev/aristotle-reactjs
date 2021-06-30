@@ -6,7 +6,7 @@ export default routes;
 
 export const loginRoute = [
   {
-    path: '/login',
+    path: '/',
     component: LoginPage,
   },
 ];
