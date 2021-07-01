@@ -30,3 +30,7 @@ export function changeUsername(username) {
     username,
   };
 }
+
+export function onSubmitForm(event, data) {
+  console.log(event, data, 'hello');
+}

@@ -19,11 +19,11 @@ import {
 } from '../../App/selectors';
 
 import { loadRepos } from '../../App/actions';
-import { changeUsername } from './actions';
+import { changeUsername, onSubmitForm } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import Login from '../../../components/Login';
+import LoginComponent from '../../../components/Login/LoginComponent';
 
 const key = 'login';
 
@@ -46,7 +46,7 @@ export function LoginPage({
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <Login onSubmit={onSubmitForm} />
+      <LoginComponent onSubmit={onSubmitForm} />
     </article>
   );
 }
@@ -60,6 +60,7 @@ LoginPage.propTypes = {
   onChangeUsername: PropTypes.func,
 };
 
+// functions
 const mapStateToProps = createStructuredSelector({
   username: makeSelectUsername(),
   loading: makeSelectLoading(),
@@ -69,10 +70,7 @@ const mapStateToProps = createStructuredSelector({
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: evt => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
-    },
+    onSubmitForm: onSubmitForm,
   };
 }
 

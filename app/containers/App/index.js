@@ -45,20 +45,6 @@ export default function App() {
         <meta name='description' content='Aristotle - HGI Back Office' />
       </Helmet>
       <Switch>
-
-        {/*No Logged in Member routing*/}
-        <Route path={'/login'}>
-          <MasterNonMember>
-            {
-              loginRoute.map(
-                (route, i) => (
-                  <RouteWithSubRoutes key={i} {...route} />
-                ),
-              )
-            }
-          </MasterNonMember>
-        </Route>
-
         {/*Logged in Member routing*/}
         <Route path={'/dashboard'}>
           <>
@@ -70,6 +56,23 @@ export default function App() {
               }
             </Master>
           </>
+        </Route>
+
+        {/*No Logged in Member routing*/}
+        <Route path={'/'}>
+          <MasterNonMember>
+            {
+              loginRoute.map(
+                (route, i) => (
+                  <RouteWithSubRoutes key={i} {...route} />
+                ),
+              )
+            }
+          </MasterNonMember>
+        </Route>
+        {/*No Logged in Member routing*/}
+        <Route path={'/register'}>
+          {/*  Loading register page component here  */}
         </Route>
       </Switch>
       <GlobalStyle />
