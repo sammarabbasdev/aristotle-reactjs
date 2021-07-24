@@ -30,12 +30,12 @@ function RouteWithSubRoutes(route) {
 }
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
+  // // max-width: calc(768px + 16px * 2);
+  // margin: 0 auto;s
+  // display: flex;
+  // min-height: 100%;
+  // padding: 0 16px;
+  // flex-direction: column;
 `;
 
 export default function App() {
@@ -47,15 +47,13 @@ export default function App() {
       <Switch>
         {/*Logged in Member routing*/}
         <Route path={'/dashboard'}>
-          <>
-            <Master>
-              {
-                routes.map((route, i) => (
-                  <RouteWithSubRoutes key={i} {...route} />
-                ))
-              }
-            </Master>
-          </>
+          <Master>
+            {
+              routes.map((route, i) => (
+                <RouteWithSubRoutes key={i} {...route} />
+              ))
+            }
+          </Master>
         </Route>
 
         {/*No Logged in Member routing*/}
