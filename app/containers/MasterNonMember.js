@@ -4,7 +4,7 @@ const MasterNonMember = (props) => {
   return (
     <>
       <header>
-        Header goes ehre
+        Header goes here
       </header>
       {props.children}
       <footer>
