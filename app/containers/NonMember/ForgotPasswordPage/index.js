@@ -19,11 +19,11 @@ import { changeUsername, onSubmitForm } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import LoginComponent from '../../../components/Login/LoginComponent';
+import ForgotPasswordComponent from '../../../components/ForgotPassword/ForgotPasswordComponent';
 
 const key = 'login';
 
-export function LoginPage({ username, loading, error, onSubmitForm }) {
+export function ForgotPasswordPage({ username, loading, error, onSubmitForm }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
@@ -35,14 +35,14 @@ export function LoginPage({ username, loading, error, onSubmitForm }) {
   return (
     <article>
       <Helmet>
-        <title>Login</title>
+        <title>Dashboard</title>
       </Helmet>
-      <LoginComponent onSubmit={onSubmitForm} />
+      <ForgotPasswordComponent onSubmit={onSubmitForm} />
     </article>
   );
 }
 
-LoginPage.propTypes = {
+ForgotPasswordPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
@@ -73,4 +73,4 @@ const withConnect = connect(
 export default compose(
   withConnect,
   memo,
-)(LoginPage);
+)(ForgotPasswordPage);
