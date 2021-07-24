@@ -1,10 +1,14 @@
 import LoginPage from './NonMember/LoginPage';
+import ForgotPasswordPage from './NonMember/ForgotPasswordPage';
+import ResetPasswordPage from './NonMember/ResetPasswordPage';
+import DashboardPage from './Dashboard';
 
 const routes = [
   {
-    path: '/business',
-    component: LoginPage,
-  }, {
+    path: '/dashboard',
+    component: DashboardPage,
+  },
+  {
     path: '/users',
     component: LoginPage,
   },
@@ -13,14 +17,20 @@ const routes = [
 export default routes;
 
 export const loginRoute = [
+  // {
+  //   path: '/',
+  //   component: LoginPage,
+  // },
+  // {
+  //   path: '/register',
+  //   component: LoginPage,
+  // },
   {
-    path: '/login',
-    component: LoginPage,
-  }, {
     path: '/forgot-password',
-    component: LoginPage,
-  }, {
-    path: '/reset-password',
-    component: LoginPage,
+    component: ForgotPasswordPage,
   },
+  // {
+  //   path: '/reset-password',
+  //   component: ResetPasswordPage,
+  // },
 ];

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class LoginComponent extends Component {
+export default class RegisterComponent extends Component {
   render() {
     return (
       <>
@@ -8,7 +8,7 @@ export default class LoginComponent extends Component {
           <div className="authincation h-100">
             <div className="container h-100">
               <div className="row justify-content-center h-100 align-items-center">
-                <div className="col-md-6">
+                <div className="col-md-9">
                   <div className="authincation-content">
                     <div className="row no-gutters">
                       <div className="col-xl-12">

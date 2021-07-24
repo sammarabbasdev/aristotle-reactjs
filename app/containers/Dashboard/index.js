@@ -13,17 +13,17 @@ import { createStructuredSelector } from 'reselect';
 
 import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
-import { makeSelectLoading, makeSelectError } from '../../App/selectors';
-import { loadRepos } from '../../App/actions';
+import { makeSelectLoading, makeSelectError } from '../App/selectors';
+import { loadRepos } from '../App/actions';
 import { changeUsername, onSubmitForm } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import LoginComponent from '../../../components/Login/LoginComponent';
+import DashboardComponent from '../../components/Dashboard/DashboardComponent';
 
 const key = 'login';
 
-export function LoginPage({ username, loading, error, onSubmitForm }) {
+export function DashboardPage({ username, loading, error, onSubmitForm }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
@@ -35,14 +35,14 @@ export function LoginPage({ username, loading, error, onSubmitForm }) {
   return (
     <article>
       <Helmet>
-        <title>Login</title>
+        <title>Forgot Password</title>
       </Helmet>
-      <LoginComponent onSubmit={onSubmitForm} />
+      <DashboardComponent onSubmit={onSubmitForm} />
     </article>
   );
 }
 
-LoginPage.propTypes = {
+DashboardPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
@@ -73,4 +73,4 @@ const withConnect = connect(
 export default compose(
   withConnect,
   memo,
-)(LoginPage);
+)(DashboardPage);
