@@ -1,4 +1,7 @@
-import LoginPage from './NonMember/LoginPage';
+import React from 'react';
+import loadable from 'utils/loadable';
+
+const LoginPage = loadable(() => import('./NonMember/LoginPage'));
 
 const routes = [
   {

@@ -18,7 +18,6 @@ import {
   makeSelectError,
 } from '../../App/selectors';
 
-import { loadRepos } from '../../App/actions';
 import { changeUsername, onSubmitForm } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
@@ -29,8 +28,6 @@ const key = 'login';
 
 export function LoginPage({
                             username,
-                            loading,
-                            error,
                             onSubmitForm,
                           }) {
   useInjectReducer({ key, reducer });
