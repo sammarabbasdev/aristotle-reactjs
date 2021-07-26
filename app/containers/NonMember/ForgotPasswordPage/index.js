@@ -21,7 +21,7 @@ import reducer from './reducer';
 import saga from './saga';
 import ForgotPasswordComponent from '../../../components/ForgotPassword/ForgotPasswordComponent';
 
-const key = 'login';
+const key = 'forgot-password';
 
 export function ForgotPasswordPage({ username, loading, error, onSubmitForm }) {
   useInjectReducer({ key, reducer });
@@ -35,7 +35,7 @@ export function ForgotPasswordPage({ username, loading, error, onSubmitForm }) {
   return (
     <article>
       <Helmet>
-        <title>Dashboard</title>
+        <title>Forgot Password</title>
       </Helmet>
       <ForgotPasswordComponent onSubmit={onSubmitForm} />
     </article>

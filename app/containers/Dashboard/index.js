@@ -21,21 +21,13 @@ import reducer from './reducer';
 import saga from './saga';
 import DashboardComponent from '../../components/Dashboard/DashboardComponent';
 
-const key = 'login';
+const key = 'dashboard';
 
-export function DashboardPage({ username, loading, error, onSubmitForm }) {
-  useInjectReducer({ key, reducer });
-  useInjectSaga({ key, saga });
-
-  useEffect(() => {
-    // When initial state username is not null, submit the form to load repos
-    if (username && username.trim().length > 0) onSubmitForm();
-  }, []);
-
+export function DashboardPage({  }) {
   return (
     <article>
       <Helmet>
-        <title>Forgot Password</title>
+        <title>Dashboard</title>
       </Helmet>
       <DashboardComponent onSubmit={onSubmitForm} />
     </article>
@@ -45,23 +37,17 @@ export function DashboardPage({ username, loading, error, onSubmitForm }) {
 DashboardPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
 };
 
 // functions
 const mapStateToProps = createStructuredSelector({
-  username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
 });
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm,
+
   };
 }
 

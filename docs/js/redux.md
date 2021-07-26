@@ -41,7 +41,7 @@ export default compose(
 You don't need to do it by hand, a `container` generator will generate everything
 that's necessary.
 
-### LoginComponent Flow Example
+### Index Flow Example
 
 To get you started on a login flow, there's a great example [here](https://github.com/tinavanschelt/recycled-login-flow).
 

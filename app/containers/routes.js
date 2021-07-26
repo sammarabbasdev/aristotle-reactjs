@@ -1,36 +1,38 @@
-import LoginPage from './NonMember/LoginPage';
-import ForgotPasswordPage from './NonMember/ForgotPasswordPage';
-import ResetPasswordPage from './NonMember/ResetPasswordPage';
-import DashboardPage from './Dashboard';
+import React from 'react';
+
+import loadable from 'utils/loadable';
+
+const LoginPage = loadable(() => import('./NonMember/LoginPage'));
+const ForgotPasswordPage = loadable(() => import('./NonMember/ForgotPasswordPage'));
+const ResetPasswordPage = loadable(() => import('./NonMember/ResetPasswordPage'));
+const DashboardPage = loadable(() => import('./Dashboard'));
+const RegisterPage = loadable(() => import('./NonMember/RegisterPage'));
 
 const routes = [
   {
-    path: '/dashboard',
+    path: '/',
     component: DashboardPage,
   },
-  {
-    path: '/users',
-    component: LoginPage,
-  },
+
 ];
 
 export default routes;
 
 export const loginRoute = [
-  // {
-  //   path: '/',
-  //   component: LoginPage,
-  // },
-  // {
-  //   path: '/register',
-  //   component: LoginPage,
-  // },
+  {
+    path: '/register',
+    component: RegisterPage,
+  },
+  {
+    path: '/login',
+    component: LoginPage,
+  },
   {
     path: '/forgot-password',
     component: ForgotPasswordPage,
   },
-  // {
-  //   path: '/reset-password',
-  //   component: ResetPasswordPage,
-  // },
+  {
+    path: '/reset-password',
+    component: ResetPasswordPage,
+  },
 ];
