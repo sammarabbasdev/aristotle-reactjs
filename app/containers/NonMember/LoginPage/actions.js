@@ -14,8 +14,11 @@
  *        return { type: YOUR_ACTION_CONSTANT, var: var }
  *    }
  */
-
 import { CHANGE_USERNAME } from './constants';
+import { API_URL } from '../../../config';
+import {reactLocalStorage} from 'reactjs-localstorage';
+
+const axios = require('axios');
 
 /**
  * Changes the input field of the form
@@ -31,6 +34,12 @@ export function changeUsername(username) {
   };
 }
 
-export function onSubmitForm(event, data) {
-  console.log(event, data, 'hello');
+export async function onSubmitForm(event, data){
+  event.preventDefault();
+  const res = await axios.post(API_URL + 'authorization/login', data );
+  reactLocalStorage.set(res, true);
+  // localStorage.setItem(res, JSON.stringify(res);
+
+  console.log();
 }
+

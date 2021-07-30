@@ -407,10 +407,13 @@ export default class RegisterComponent extends Component {
 
                       <button type="submit" onClick={() => this.next()}
                               className="btn btn-space btn-primary next-btn pull-right">
-                        <span>Next</span> <i className="next-mdi icofont-rounded-right pull-right" /></button>
+                        <span>Next</span>
+                        <i className="next-mdi icofont-rounded-right pull-right" />
+                      </button>
                       <button onClick={() => this.back()} type="submit"
                               className="btn btn-space btn-basic back-btn pull-right">
-                        <i className="back-mdi icofont-rounded-left pull-left" /> <span>Previous</span>
+                        <i className="back-mdi icofont-rounded-left pull-left" />
+                        <span>Previous</span>
                       </button>
 
                     </div>
